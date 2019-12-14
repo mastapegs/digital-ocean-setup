@@ -81,7 +81,7 @@ apt update
 
 # Install Nginx
 if [ "${INSTALL_NGINX}" = true ]; then
-    apt install nginx
+    apt install nginx -y
     ufw allow 'Nginx HTTP'
     systemctl restart nginx
 fi
