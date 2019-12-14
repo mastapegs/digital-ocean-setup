@@ -12,6 +12,9 @@ USERNAME=mpagan
 # user.
 COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 
+# Install Nginx
+INSTALL_NGINX=true
+
 # Additional public keys to add to the new sudo user
 # OTHER_PUBLIC_KEYS_TO_ADD=(
 #     "ssh-rsa AAAAB..."
@@ -72,3 +75,12 @@ fi
 # Add exception for SSH and then enable UFW firewall
 ufw allow OpenSSH
 ufw --force enable
+
+# Update Ubuntu package lists
+apt Update
+
+# Install Nginx
+if [ "${INSTALL_NGINX}" = true ]; then
+    apt install nginx
+    ufw allow 'Nginx HTTP'
+fi
