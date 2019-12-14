@@ -77,10 +77,11 @@ ufw allow OpenSSH
 ufw --force enable
 
 # Update Ubuntu package lists
-apt Update
+apt update
 
 # Install Nginx
 if [ "${INSTALL_NGINX}" = true ]; then
     apt install nginx
     ufw allow 'Nginx HTTP'
+    systemctl restart nginx
 fi
