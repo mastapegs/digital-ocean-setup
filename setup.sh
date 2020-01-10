@@ -13,7 +13,7 @@ USERNAME=mpagan
 COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 
 # Install Nginx
-INSTALL_NGINX=true
+INSTALL_NGINX=false
 
 # Additional public keys to add to the new sudo user
 # OTHER_PUBLIC_KEYS_TO_ADD=(
